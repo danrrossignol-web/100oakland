@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Estates at 100 Oakland | South Windsor, CT</title>
+    <!-- Google Fonts for a premium, professional look -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles & Color Palette */
+        :root {
+            --forest-green: #1A3A2A;
+            --light-green: #2C5641;
+            --gold-accent: #C5A880;
+            --text-dark: #333333;
+            --text-light: #F8F9FA;
+            --bg-light: #FFFFFF;
+            --bg-gray: #F4F4F4;
+        }
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--bg-light);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--forest-green);
+            text-decoration: none;
+        }
+
+        /* Hero Section */
+        #hero {
+            /* REPLACE URL BELOW WITH YOUR AERIAL IMAGE */
+            background: linear-gradient(rgba(26, 58, 42, 0.7), rgba(26, 58, 42, 0.7)), url('hero-bg-placeholder.jpg') center/cover;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 0 20px;
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            max-width: 900px;
+            margin-bottom: 20px;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .btn {
+            background-color: var(--gold-accent);
+            color: var(--forest-green);
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #E0C39C;
+        }
+
+        /* Section Formatting */
+        section {
+            padding: 80px 10%;
+        }
+
+        /* Updates Section */
+        #updates {
+            background-color: var(--forest-green);
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        #updates h2 {
+            color: var(--gold-accent);
+            font-size: 2.5rem;
+        }
+
+        .update-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--light-green);
+            padding: 40px;
+            border-radius: 5px;
+            border-left: 5px solid var(--gold-accent);
+            text-align: left;
+        }
+
+        /* Vision Section (Split Layout) */
+        #vision {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background-color: var(--bg-light);
+        }
+
+        .vision-text {
+            flex: 1;
+        }
+
+        .vision-text h2 {
+            font-size: 2.5rem;
+            color: var(--forest-green);
+        }
+
+        .vision-img {
+            flex: 1;
+            /* REPLACE URL BELOW WITH BLUEPRINT COFFEE MUG IMAGE */
+            background: url('blueprint-placeholder.jpg') center/cover;
+            height: 400px;
+            border-radius: 5px;
+        }
+
+        /* Benefits Grid */
+        #benefits {
+            background-color: var(--bg-gray);
+            text-align: center;
+        }
+
+        #benefits h2 {
+            font-size: 2.5rem;
+            color: var(--forest-green);
+            margin-bottom: 50px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-light);
+            padding: 40px 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--forest-green);
+            margin-top: 20px;
+        }
+
+        .card-icon {
+            font-size: 40px;
+        }
+
+        /* Clubhouse Section */
+        #clubhouse {
+            /* REPLACE URL BELOW WITH CLUBHOUSE INTERIOR IMAGE */
+            background: linear-gradient(rgba(244, 244, 244, 0.9), rgba(244, 244, 244, 0.9)), url('clubhouse-placeholder.jpg') center/cover;
+            text-align: center;
+        }
+
+        #clubhouse h2 {
+            font-size: 2.5rem;
+            color: var(--forest-green);
+        }
+
+        .clubhouse-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Footer & Form */
+        footer {
+            background-color: #222;
+            color: #ccc;
+            text-align: center;
+            padding: 60px 10%;
+        }
+
+        footer h2 {
+            color: white;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 30px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, textarea {
+            padding: 12px;
+            font-family: 'Open Sans', sans-serif;
+            border: none;
+            border-radius: 3px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            #vision {
+                flex-direction: column;
+            }
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">The Estates at 100 Oakland</a>
+        <!-- You can add your green shield logo image tag here inside the anchor -->
+    </nav>
+
+    <section id="hero">
+        <h1>Thoughtful 55+ Living Designed for South Windsor.</h1>
+        <p>A beautifully crafted, single-story neighborhood allowing local adults to thrive in their next chapter while actively benefiting the community they love.</p>
+        <a href="#updates" class="btn">View Project Updates</a>
+    </section>
+
+    <section id="updates">
+        <h2>Latest Project Updates</h2>
+        <div class="update-box">
+            <h3>Unanimous Inland Wetlands Approval (June 2026)</h3>
+            <p>Our team is proud to announce that our application has received unanimous approval from the South Windsor Inland Wetlands Agency and Conservation Commission. We greatly appreciate the collaborative discussions with the town. Our finalized site design permanently preserves 12 acres of natural open space, removes invasive species like Japanese Knotweed, and features a custom-engineered 60-foot bridge to safeguard the local brook and allow wildlife to move freely.</p>
+            <p><strong>Next Steps:</strong> We are currently preparing for our presentation to the South Windsor Planning & Zoning Commission in October.</p>
+        </div>
+    </section>
+
+    <section id="vision">
+        <div class="vision-img"></div>
+        <div class="vision-text">
+            <h2>Keeping Our Neighbors Close to Home</h2>
+            <p>As our community evolves, many long-time residents find themselves looking to downsize from larger family homes, but struggle to find high-quality, low-maintenance options locally. Too often, downsizing means having to leave the community, friends, and local businesses they have supported for decades.</p>
+            <p>The Estates at 100 Oakland is designed specifically to fill that gap. By providing a quiet, carefully planned 55+ neighborhood, we are offering our neighbors the opportunity to transition into a single-story home with ease—ensuring they can keep their roots in South Windsor.</p>
+        </div>
+    </section>
+
+    <section id="benefits">
+        <h2>Benefits to South Windsor</h2>
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-icon">🏡</div>
+                <h3>Single-Story Living</h3>
+                <p>Offering accessible, high-quality home designs tailored for active adults looking to downsize without compromising on craftsmanship or community.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🛣️</div>
+                <h3>Privately Maintained</h3>
+                <p>All neighborhood roads will be privately owned and maintained by the HOA. Snow plowing, paving, and street lighting will be handled entirely internally, keeping ongoing infrastructure costs off the town's road maintenance budget.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📈</div>
+                <h3>Positive Municipal Impact</h3>
+                <p>Designed to generate strong, consistent property tax revenue for South Windsor to support local services, while naturally avoiding the impacts on school enrollment associated with standard residential development.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="clubhouse">
+        <div class="clubhouse-content">
+            <h2>Building Connection Right at Home</h2>
+            <p>Active adult living is about more than just a beautiful home—it’s about shared experiences. Our plan includes a dedicated, private community clubhouse designed specifically for residents to gather, host events, and stay active. Featuring versatile social spaces and a welcoming gathering hall, this on-site amenity provides a private hub for everyday neighborly connection, perfectly complementing the wonderful community resources South Windsor already offers.</p>
+        </div>
+    </section>
+
+    <footer>
+        <h2>Stay Informed</h2>
+        <p>Have questions about the proposed site plan or want to receive updates on our Planning & Zoning progress? Join our mailing list.</p>
+        
+        <!-- Note: To make this form work on static GitHub Pages, point the 'action' to a free service like Formspree.io -->
+        <form action="https://formspree.io/f/YOUR_ENDPOINT_HERE" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email Address" required>
+            <textarea name="message" placeholder="Optional Message"></textarea>
+            <button type="submit" class="btn">Get Updates</button>
+        </form>
+        
+        <p style="margin-top: 50px; font-size: 0.9em; color: #777;">&copy; 2026 The Estates at 100 Oakland. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
